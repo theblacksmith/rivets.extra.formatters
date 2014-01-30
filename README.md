@@ -1,6 +1,6 @@
 # [RivetsJS](http://www.rivetsjs.com/) Extra Formatters
 
-> **NOTE:** Most of the formatters found here where copied from [rivets wiki](https://github.com/mikeric/rivets/wiki/Example-formatters) and renamed. The only exception (so far) is the [Evaluate](#evaluate) formatter.
+> **NOTE:** Most of the formatters found here where copied from [rivets wiki](https://github.com/mikeric/rivets/wiki/Example-formatters) and renamed. The only exception (so far) is the [Evaluate](#evaluate-an-expression) formatter.
 
 ## Usage
 
