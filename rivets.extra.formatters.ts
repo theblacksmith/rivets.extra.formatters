@@ -73,7 +73,7 @@ module rivets
       lower_than: function(value, arg) { return value < arg; },
       lower_or_equal_to: function(value, arg) { return value <= arg; },
       empty: function(value) { return value == null || value === ""; },
-      preventDefault: preventDefault,
+      prevent_default: preventDefault,
       evaluate: evaluate
     };
 
@@ -96,7 +96,7 @@ module rivets
           lower_or_equal_to: '<=',
           empty: 'empty',
           evaluate: '=',
-          preventDefault: 'preventDefault'
+          prevent_default: 'preventDefault'
         }
       }
 

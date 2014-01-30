@@ -90,7 +90,7 @@ var rivets;
             empty: function (value) {
                 return value == null || value === "";
             },
-            preventDefault: preventDefault,
+            prevent_default: preventDefault,
             evaluate: evaluate
         };
 
@@ -130,7 +130,7 @@ var rivets;
                     lower_or_equal_to: '<=',
                     empty: 'empty',
                     evaluate: '=',
-                    preventDefault: 'preventDefault'
+                    prevent_default: 'preventDefault'
                 }
             };
             return formatters;
