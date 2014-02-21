@@ -34,7 +34,6 @@ module rivets
       var binding = "";
 
       if(Cache.contains(cacheKey)) {
-        console.log("Using cached!");
         return Cache.get(cacheKey)(value);
       }
 
@@ -100,10 +99,10 @@ module rivets
         }
       }
 
-      static init(config: any = {}) {
+      static init(config: any = {keys:{}}) {
 
         var settings = {
-          disable: config.disable || formatters.defaults.disable,
+          disable: config.disable || false,
           keys: {}
         };
 
@@ -112,8 +111,8 @@ module rivets
         });
 
         Object.keys(funcs).forEach(function(c) {
-          if(settings.disable.indexOf(c) === false)
-            rivets.formatters[ settings[c] ] = funcs[ c ]; 
+          if(!settings.disable || settings.disable.indexOf(c) === false)
+            rivets.formatters[ settings.keys[c] ] = funcs[ c ]; 
         });
       }
     }

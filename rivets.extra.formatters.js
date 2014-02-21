@@ -31,7 +31,6 @@ var rivets;
             var binding = "";
 
             if (Cache.contains(cacheKey)) {
-                console.log("Using cached!");
                 return Cache.get(cacheKey)(value);
             }
 
@@ -101,9 +100,9 @@ var rivets;
             function formatters() {
             }
             formatters.init = function (config) {
-                if (typeof config === "undefined") { config = {}; }
+                if (typeof config === "undefined") { config = { keys: {} }; }
                 var settings = {
-                    disable: config.disable || formatters.defaults.disable,
+                    disable: config.disable || false,
                     keys: {}
                 };
 
@@ -112,8 +111,8 @@ var rivets;
                 });
 
                 Object.keys(funcs).forEach(function (c) {
-                    if (settings.disable.indexOf(c) === false)
-                        rivets.formatters[settings[c]] = funcs[c];
+                    if (!settings.disable || settings.disable.indexOf(c) === false)
+                        rivets.formatters[settings.keys[c]] = funcs[c];
                 });
             };
             formatters.defaults = {
